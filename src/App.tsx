@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
+import { Grid, HoverLog, ModeAndButton } from './components/index'
+import Confetti from 'react-confetti'
 
-function App() {
+export function App() {
+  const [start, setStart] = useState(false)
+  const [hoveredSquares, setHoveredSquares] = useState<string[]>([])
+  const [fieldSize, setFieldSize] = useState(3)
+
+  const blueSquaresCount = document.querySelectorAll('.square--blue').length
+  const allSquaresAreBlue = blueSquaresCount === fieldSize ** 2
+
+  useEffect(() => {
+    setHoveredSquares([])
+  }, [fieldSize])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      {allSquaresAreBlue && <Confetti />}
+      <div className="container--horizontal">
 
-export default App;
+        <div className="container--vertical">
+          <ModeAndButton
+            setFieldSize={setFieldSize}
+            setStart={setStart}
+            start={start}
+          />
+          <Grid
+            setHoveredSquares={setHoveredSquares}
+            fieldSize={fieldSize}
+            start={start}
+          />
+        </div>
+
+        <HoverLog
+          hoveredSquares={hoveredSquares}
+          start={start}
+        />
+      </div>
+    </div>
+  )
+}

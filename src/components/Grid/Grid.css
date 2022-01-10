@@ -1,0 +1,16 @@
+.square {
+  flex: 1;
+  border: 0.5px solid gray;
+  margin: -0.5px;
+  background: white;
+}
+
+.square--blue {
+  background: rgb(2, 168, 244);
+}
+
+.grid-container {
+  display: grid;
+  width: 200px;
+  height: 200px;
+}
