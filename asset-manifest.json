@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/grid-swap-color/static/css/main.088a9ddf.css",
+    "main.js": "/grid-swap-color/static/js/main.0a44f5c0.js",
+    "index.html": "/grid-swap-color/index.html",
+    "main.088a9ddf.css.map": "/grid-swap-color/static/css/main.088a9ddf.css.map",
+    "main.0a44f5c0.js.map": "/grid-swap-color/static/js/main.0a44f5c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.088a9ddf.css",
+    "static/js/main.0a44f5c0.js"
+  ]
+}
